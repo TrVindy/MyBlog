@@ -1,0 +1,29 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Vindy...</h1>
+    <p class="author_body">Web developer and a writer</p>
+</div>
+
+<img src="/img/Mine.webp" alt="A girl in a mood" class="heroin_image" height="528" width="981"/>
+
+<section class="articles">
+    <h2 class="article_heading"> Latest Post</h2>
+    <ul class="article_ul">
+
+        <% data.forEach(post => { %>
+
+         <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="articles_list_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+
+        <% }) %>
+    </ul>
+
+    <% if (nextPage !== null) { %>
+     <a href="/?page=<%= nextPage %>" class= "pagination">&lt; View older posts</a>
+    <% } %>
+
+    
+</section>
